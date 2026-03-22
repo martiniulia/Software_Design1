@@ -1,0 +1,104 @@
+@model IEnumerable<FlowerShop.Models.Flower>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Flowers Collection";
+}
+
+<div style="max-width: 1100px; margin: 40px auto; padding: 0 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    @* Header Section *@
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+        <div>
+            <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin: 0; font-size: 2.8rem;">Our Flowers</h2>
+            <p style="color: #666; margin: 5px 0 0 0;">Handpicked fresh blooms for every occasion.</p>
+        </div>
+        @if (Context.Session.GetString("UserRole") == "Admin")
+        {
+                <a href="/Flowers/Create" style="background: #1a2e1a; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-size: 0.9rem; font-weight: bold; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">+ Add Flower</a>
+        }
+    </div>
+
+    @* Search & Sort Bar *@
+    <div style="display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+        <form method="get" style="display: flex; gap: 10px; flex: 1; min-width: 300px;">
+            <input name="search" value="@ViewBag.Search" placeholder="Search flowers..." 
+                   style="flex: 1; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 4px; outline: none; font-size: 1rem;" />
+            <button type="submit" style="background: #2d4a2d; color: white; border: none; padding: 0 25px; border-radius: 4px; cursor: pointer; font-weight: 600;">Search</button>
+        </form>
+        <div style="display: flex; align-items: center; gap: 15px; background: #f9f9f9; padding: 5px 20px; border-radius: 4px; border: 1px solid #eee;">
+            <span style="font-size: 0.9rem; color: #888;">Sort by Price:</span>
+            <a href="?sortBy=price&ascending=true" style="color: #1a2e1a; text-decoration: none; font-weight: bold;">Low to High ↑</a>
+            <a href="?sortBy=price&ascending=false" style="color: #1a2e1a; text-decoration: none; font-weight: bold;">High to Low ↓</a>
+        </div>
+    </div>
+
+    @* Grid Layout - 2 Columns *@
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+        @foreach (var flower in Model)
+        {
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: transform 0.3s ease;" 
+                     onmouseover="this.style.transform='translateY(-5px)'" 
+                     onmouseout="this.style.transform='translateY(0)'">
+
+                @* Large Image Container *@
+                    <div style="height: 350px; width: 100%; overflow: hidden; background: #fcfcfc; position: relative;">
+                    @if (!string.IsNullOrEmpty(flower.ImageUrl))
+                    {
+                                       <img src="/@flower.ImageUrl" 
+                                     alt="@flower.Name" 
+                                     style="width: 100%; height: 100%; object-fit: cover;" 
+                                     onerror="this.src='/no-image.png'" />
+                    }
+                    else
+                    {
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #ccc;">No Image Available</div>
+                    }
+
+                    @* Price Badge Over Image *@
+                        <div style="position: absolute; bottom: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a2e1a; backdrop-filter: blur(5px);">
+                        @flower.Price.ToString("F2") RON
+                        </div>
+                    </div>
+
+                @* Content Details *@
+                    <div style="padding: 25px;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                            <div>
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #c9967e; font-weight: bold;">
+                                @(flower.Category?.Name ?? "General")
+                                </span>
+                                <h3 style="margin: 5px 0; font-size: 1.5rem; color: #1a2e1a; font-family: 'Playfair Display', serif;">@flower.Name</h3>
+                            </div>
+                            <div style="text-align: right;">
+                                 <span style="display: block; font-size: 0.85rem; color: @(flower.StockQuantity > 0 ? "#4a7a4a" : "#c0392b"); font-weight: 600;">
+                                @(flower.StockQuantity > 0 ? $"{flower.StockQuantity} in stock" : "Out of stock")
+                                 </span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 10px; margin-top: 20px; align-items: stretch;">
+                            <a href="/Flowers/Details/@flower.Id" style="flex: 2; text-align: center; background: #1a2e1a; color: white; text-decoration: none; padding: 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem;">View Details</a>
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post" style="flex: 2; margin: 0;">
+                                <input type="hidden" name="id" value="@flower.Id" />
+                                <input type="hidden" name="productType" value="flower" />
+                                <input type="hidden" name="quantity" value="1" />
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path@Context.Request.QueryString" />
+                                <button type="submit" style="width: 100%; height: 44px; background: #1a2e1a; color: white; border: none; border-radius: 4px; font-weight: 600; font-size: 0.9rem; cursor: pointer;">Add to Cart</button>
+                            </form>
+
+                        @if (Context.Session.GetString("UserRole") == "Admin")
+                        {
+                                    <a href="/Flowers/Edit/@flower.Id" style="flex: 1; height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; background: white; color: #c9967e; border: 1px solid #c9967e; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.9rem;">Edit</a>
+                        }
+                        @if (Context.Session.GetString("UserRole") == "Admin")
+                        {
+                                    <form asp-controller="Flowers" asp-action="Delete" asp-route-id="@flower.Id" method="post" style="flex: 1; margin: 0;">
+                                        <button type="submit" style="width:100%; height:44px; text-align:center; background:white; color:#b35353; border:1px solid #b35353; text-decoration:none; border-radius:4px; font-weight:600; font-size:0.9rem; cursor:pointer;">Delete</button>
+                                    </form>
+                        }
+                        </div>
+                    </div>
+                </div>
+        }
+    </div>
+</div>

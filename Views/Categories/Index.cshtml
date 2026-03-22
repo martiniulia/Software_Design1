@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Flower Count</th>
+                    @if (ViewBag.IsAdmin)
+                    {
+                        <th>Actions</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                        <tr>
+                            <td>@category.Name</td>
+                            <td>@category.Description</td>
+                            <td>@category.Flowers.Count</td>
+                        @if (ViewBag.IsAdmin)
+                        {
+                                    <td class="actions">
+                                        <a href="/Categories/Edit/@category.Id" class="btn btn-secondary btn-sm">Edit</a>
+                                        </td>
+                        }
+                        </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

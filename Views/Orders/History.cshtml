@@ -1,0 +1,33 @@
+@model IEnumerable<FlowerShop.Models.Order>
+@{
+    ViewData["Title"] = "Order History";
+}
+
+<div style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+    <a href="/Flowers/Index" style="display:inline-flex; align-items:center; justify-content:center; text-decoration:none; background:#1a2e1a; color:#fff; padding:11px 16px; border-radius:4px; font-family:'Segoe UI',sans-serif; margin-bottom:16px;">
+        Back to Shopping
+    </a>
+    <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin-bottom: 18px;">Order History</h2>
+
+    @if (!Model.Any())
+    {
+        <p style="font-family: 'Segoe UI', sans-serif; color: #666;">You don't have any orders yet.</p>
+    }
+    else
+    {
+        <div style="display: grid; gap: 14px;">
+            @foreach (var order in Model)
+            {
+                <div style="background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 14px; font-family: 'Segoe UI', sans-serif;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <strong>#@order.Id</strong>
+                        <span>@order.OrderDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</span>
+                    </div>
+                    <div style="margin-top: 6px;">Status: <strong style="color: #1a2e1a;">@order.Status</strong></div>
+                    <div style="margin-top: 4px;">Total: <strong>@order.TotalAmount.ToString("F2") RON</strong></div>
+                    <div style="margin-top: 8px; color: #555;">Items: @order.OrderItems.Count</div>
+                </div>
+            }
+        </div>
+    }
+</div>

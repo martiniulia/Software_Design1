@@ -1,0 +1,40 @@
+@model IEnumerable<FlowerShop.Models.Category>
+@{
+    ViewData["Title"] = "Manage Categories";
+}
+
+<div style="max-width:1000px;margin:40px auto;padding:0 20px;">
+    <a href="/Admin" style="text-decoration:none;color:#666;font-size:0.9rem;display:inline-flex;margin-bottom:20px;">← Back to Management</a>
+
+    @if (TempData["Error"] != null)
+    {
+        <div style="background:#fdeaea;color:#a33;padding:10px 12px;border-radius:6px;margin-bottom:14px;font-family:'Segoe UI',sans-serif;">@TempData["Error"]</div>
+    }
+
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2 style="font-family:'Playfair Display',serif;color:#1a2e1a;">Categories</h2>
+        <a href="/Categories/Create" style="background:#1a2e1a;color:#fff;padding:10px 14px;text-decoration:none;border-radius:4px;">Add Category</a>
+    </div>
+
+    <div style="display:grid;gap:10px;margin-top:16px;">
+        @foreach (var c in Model)
+        {
+            <div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #ececec;border-radius:8px;padding:12px;font-family:'Segoe UI',sans-serif;">
+                <div>
+                    <strong>@c.Name</strong>
+                    @if (!string.IsNullOrEmpty(c.Description))
+                    {
+                        <span style="color:#666;"> — @c.Description</span>
+                    }
+                </div>
+                <div style="display:flex;gap:8px;align-items:stretch;">
+                    <a href="/Categories/Edit/@c.Id" style="height:40px;min-width:90px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #1a2e1a;color:#1a2e1a;text-decoration:none;border-radius:4px;">Edit</a>
+                    <form asp-action="DeleteCategory" method="post" style="margin:0;">
+                        <input type="hidden" name="id" value="@c.Id" />
+                        <button type="submit" style="height:40px;min-width:90px;background:#fff;border:1px solid #b35353;color:#b35353;border-radius:4px;cursor:pointer;">Delete</button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,60 @@
+@model List<FlowerShop.Models.CartItem>
+@{
+    ViewData["Title"] = "Your Cart";
+    var total = (decimal)(ViewBag.Total ?? 0m);
+}
+
+<div style="max-width: 960px; margin: 40px auto; padding: 0 20px; font-family: 'Playfair Display', serif;">
+    <h2 style="color: #1a2e1a; margin-bottom: 20px;">Your Cart</h2>
+    @if (TempData["CartError"] is string cartError)
+    {
+        <div style="margin-bottom: 14px; background:#fdeaea; color:#a33; border:1px solid #f2c7c7; border-radius:8px; padding:10px 12px; font-family:'Segoe UI',sans-serif;">
+            @cartError
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <p style="font-family: 'Segoe UI', sans-serif; color: #555;">Your cart is empty.</p>
+        <a href="/Flowers/Index" style="display: inline-block; text-decoration: none; background: #1a2e1a; color: #fff; padding: 10px 16px; border-radius: 4px; font-family: 'Segoe UI', sans-serif;">Continue shopping</a>
+    }
+    else
+    {
+        <div style="display: grid; gap: 12px;">
+            @foreach (var item in Model)
+            {
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 14px; font-family: 'Segoe UI', sans-serif;">
+                    <div>
+                        <div style="font-weight: 600; color: #1a2e1a;">@item.Name</div>
+                        <div style="font-size: 0.9rem; color: #666;">@(item.IsBouquet ? "Bouquet" : "Flower") | Qty: @item.Quantity</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <div style="font-weight: 600;">@((item.Price * item.Quantity).ToString("F2")) RON</div>
+                        <form asp-controller="Cart" asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <input type="hidden" name="productType" value="@(item.IsBouquet ? "bouquet" : "flower")" />
+                            <button type="submit" style="background: transparent; border: 1px solid #b1b1b1; color: #444; padding: 7px 10px; border-radius: 4px; cursor: pointer;">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div style="margin-top: 24px; background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 16px; font-family: 'Segoe UI', sans-serif;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <strong style="font-size: 1.1rem;">Total</strong>
+                <strong style="font-size: 1.1rem; color: #1a2e1a;">@total.ToString("F2") RON</strong>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="/Flowers/Index" style="flex: 1; display: flex; align-items: center; justify-content: center; background: #1a2e1a; color: #fff; border: none; padding: 11px 16px; border-radius: 4px; text-decoration: none;">
+                    Back to Shopping
+                </a>
+                <form asp-controller="Cart" asp-action="PlaceOrder" method="post" style="flex: 1;">
+                    <button type="submit" style="background: #1a2e1a; color: #fff; border: none; padding: 11px 16px; border-radius: 4px; cursor: pointer; width: 100%;">
+                        Place Order
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
