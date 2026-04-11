@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\migrations\\20260315175115_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:migrations\\20260315175115_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\middleware\\sessionauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:middleware\\sessionauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\floristcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\floristcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\bouquetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,20 +15,56 @@
       "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\services\\flowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:services\\flowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\florist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\florist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\bouqetflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\bouqetflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\middleware\\sessionauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:middleware\\sessionauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2C4E8F0-1A3D-4E5F-9B7C-6D8E0F1A2B3C}|Software_Design1.Tests\\Software_Design1.Tests.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\software_design1.tests\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C4E8F0-1A3D-4E5F-9B7C-6D8E0F1A2B3C}|Software_Design1.Tests\\Software_Design1.Tests.csproj|solutionrelative:software_design1.tests\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\florist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\florist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\migrations\\20260315175115_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:migrations\\20260315175115_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\floristcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\floristcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,10 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\views\\florist\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:views\\florist\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:extensions\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -143,24 +159,12 @@
       "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:views\\bouquets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\bouqetflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\bouqetflower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\views\\flowers\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:views\\flowers\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\views\\flowers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:views\\flowers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\controller\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|solutionrelative:controller\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43A1BA38-31B6-4F88-A40D-B5FE7F0CFCB5}|Software_Design1.csproj|c:\\users\\maria\\desktop\\sd\\software_design1\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -229,7 +233,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -237,7 +241,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "FlowerService.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Services\\FlowerService.cs",
+              "RelativeDocumentMoniker": "Services\\FlowerService.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Services\\FlowerService.cs",
+              "RelativeToolTip": "Services\\FlowerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T17:10:31.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\AuthController.cs",
               "RelativeDocumentMoniker": "Controller\\AuthController.cs",
@@ -245,34 +261,68 @@
               "RelativeToolTip": "Controller\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T19:50:58.134Z",
+              "WhenOpened": "2026-03-15T19:50:58.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T18:07:15.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BouquetController.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\BouquetController.cs",
-              "RelativeDocumentMoniker": "Controller\\BouquetController.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\BouquetController.cs",
-              "RelativeToolTip": "Controller\\BouquetController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Extensions\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\SessionExtensions.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Extensions\\SessionExtensions.cs",
+              "RelativeToolTip": "Extensions\\SessionExtensions.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:49:54.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T11:48:48.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CartController.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\CartController.cs",
-              "RelativeDocumentMoniker": "Controller\\CartController.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\CartController.cs",
-              "RelativeToolTip": "Controller\\CartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "BouqetFlower.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\BouqetFlower.cs",
+              "RelativeDocumentMoniker": "Models\\BouqetFlower.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\BouqetFlower.cs",
+              "RelativeToolTip": "Models\\BouqetFlower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T23:17:25.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-19T15:29:37.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Florist.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Florist.cs",
+              "RelativeDocumentMoniker": "Models\\Florist.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Florist.cs",
+              "RelativeToolTip": "Models\\Florist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T20:42:10.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Flower.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Flower.cs",
+              "RelativeDocumentMoniker": "Models\\Flower.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Flower.cs",
+              "RelativeToolTip": "Models\\Flower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T20:44:25.35Z"
             },
             {
               "$type": "Document",
@@ -282,27 +332,61 @@
               "RelativeDocumentMoniker": "Controller\\CategoriesController.cs",
               "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\CategoriesController.cs",
               "RelativeToolTip": "Controller\\CategoriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T19:51:53.239Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FloristController.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FloristController.cs",
-              "RelativeDocumentMoniker": "Controller\\FloristController.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FloristController.cs",
-              "RelativeToolTip": "Controller\\FloristController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:46:08.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-15T19:51:53.239Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BouquetController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\BouquetController.cs",
+              "RelativeDocumentMoniker": "Controller\\BouquetController.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\BouquetController.cs",
+              "RelativeToolTip": "Controller\\BouquetController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T20:49:54.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Software_Design1.Tests\\AuthServiceTests.cs",
+              "RelativeDocumentMoniker": "Software_Design1.Tests\\AuthServiceTests.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Software_Design1.Tests\\AuthServiceTests.cs",
+              "RelativeToolTip": "Software_Design1.Tests\\AuthServiceTests.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T16:43:48.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controller\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\AdminController.cs",
+              "RelativeToolTip": "Controller\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T22:41:03.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FlowersController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FlowersController.cs",
+              "RelativeDocumentMoniker": "Controller\\FlowersController.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FlowersController.cs",
+              "RelativeToolTip": "Controller\\FlowersController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T19:52:01.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "SessionAuthMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Middleware\\SessionAuthMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\SessionAuthMiddleware.cs",
@@ -310,64 +394,47 @@
               "RelativeToolTip": "Middleware\\SessionAuthMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T14:10:55.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T14:10:55.179Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "20260315175115_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\20260315175115_InitialCreate.cs",
               "RelativeDocumentMoniker": "Migrations\\20260315175115_InitialCreate.cs",
               "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\20260315175115_InitialCreate.cs",
               "RelativeToolTip": "Migrations\\20260315175115_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T15:25:03.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T15:25:03.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controller\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\AdminController.cs",
-              "RelativeToolTip": "Controller\\AdminController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "FloristController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FloristController.cs",
+              "RelativeDocumentMoniker": "Controller\\FloristController.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FloristController.cs",
+              "RelativeToolTip": "Controller\\FloristController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T22:41:03.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-15T20:46:08.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AuthServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Software_Design1.Tests\\AuthServiceTests.cs",
-              "RelativeDocumentMoniker": "Software_Design1.Tests\\AuthServiceTests.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Software_Design1.Tests\\AuthServiceTests.cs",
-              "RelativeToolTip": "Software_Design1.Tests\\AuthServiceTests.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\CartController.cs",
+              "RelativeDocumentMoniker": "Controller\\CartController.cs",
+              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\CartController.cs",
+              "RelativeToolTip": "Controller\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T16:43:48.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T23:17:25.913Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Florist.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Florist.cs",
-              "RelativeDocumentMoniker": "Models\\Florist.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Florist.cs",
-              "RelativeToolTip": "Models\\Florist.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:42:10.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -379,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\Create.cshtml",
@@ -391,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -403,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Migrations\\AppDbContextModelSnapshot.cs",
@@ -415,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "AdminRepository.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Repositories\\AdminRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\AdminRepository.cs",
@@ -427,20 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T18:07:15.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "BouquetRepository.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Repositories\\BouquetRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\BouquetRepository.cs",
@@ -452,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Cart\\Index.cshtml",
@@ -465,18 +519,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "SessionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Extensions\\SessionExtensions.cs",
-              "RelativeDocumentMoniker": "Extensions\\SessionExtensions.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Extensions\\SessionExtensions.cs",
-              "RelativeToolTip": "Extensions\\SessionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-21T11:48:48.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "20260320194905_ColoanaPoze.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\20260320194905_ColoanaPoze.cs",
               "RelativeDocumentMoniker": "Migrations\\20260320194905_ColoanaPoze.cs",
@@ -488,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "OrderDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\OrderDetails.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\OrderDetails.cshtml",
@@ -500,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "History.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Orders\\History.cshtml",
               "RelativeDocumentMoniker": "Views\\Orders\\History.cshtml",
@@ -512,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
@@ -524,7 +566,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\OrdersController.cs",
               "RelativeDocumentMoniker": "Controller\\OrdersController.cs",
@@ -536,7 +578,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "FloristsController.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FloristsController.cs",
               "RelativeDocumentMoniker": "Controller\\FloristsController.cs",
@@ -548,7 +590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "Models\\CartItem.cs",
@@ -560,7 +602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "Models\\OrderItem.cs",
@@ -572,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Categories\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Categories\\Create.cshtml",
@@ -584,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Categories\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Categories\\Details.cshtml",
@@ -596,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Categories\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Categories\\Edit.cshtml",
@@ -608,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "20260320225859_Update.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\20260320225859_Update.cs",
               "RelativeDocumentMoniker": "Migrations\\20260320225859_Update.cs",
@@ -620,7 +662,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Auth\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
@@ -632,7 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Bouquets\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Bouquets\\Details.cshtml",
@@ -644,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\UsersController.cs",
               "RelativeDocumentMoniker": "Controller\\UsersController.cs",
@@ -656,7 +698,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "Bouquet.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Bouquet.cs",
               "RelativeDocumentMoniker": "Models\\Bouquet.cs",
@@ -668,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Bouquets\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Bouquets\\Index.cshtml",
@@ -680,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "20260320204006_ImageToBouquets.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Migrations\\20260320204006_ImageToBouquets.cs",
               "RelativeDocumentMoniker": "Migrations\\20260320204006_ImageToBouquets.cs",
@@ -692,19 +734,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Flower.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Flower.cs",
-              "RelativeDocumentMoniker": "Models\\Flower.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Flower.cs",
-              "RelativeToolTip": "Models\\Flower.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wB0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:44:25.35Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Flowers\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Flowers\\Details.cshtml",
@@ -716,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Flowers\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Flowers\\Index.cshtml",
@@ -728,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -740,19 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "BouqetFlower.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\BouqetFlower.cs",
-              "RelativeDocumentMoniker": "Models\\BouqetFlower.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\BouqetFlower.cs",
-              "RelativeToolTip": "Models\\BouqetFlower.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T15:29:37.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Software_Design1.csproj",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Software_Design1.csproj",
               "RelativeDocumentMoniker": "Software_Design1.csproj",
@@ -764,19 +782,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "FlowersController.cs",
-              "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FlowersController.cs",
-              "RelativeDocumentMoniker": "Controller\\FlowersController.cs",
-              "ToolTip": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Controller\\FlowersController.cs",
-              "RelativeToolTip": "Controller\\FlowersController.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAswIMAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T19:52:01.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Categories\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Categories\\Index.cshtml",
@@ -788,7 +794,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Shared\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ViewStart.cshtml",
@@ -800,7 +806,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -812,7 +818,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\Index.cshtml",
@@ -824,7 +830,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Auth\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Register.cshtml",
@@ -836,7 +842,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Shared\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ViewImports.cshtml",
@@ -848,7 +854,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\Edit.cshtml",
@@ -860,7 +866,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\Details.cshtml",
@@ -872,7 +878,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Category.cs",
@@ -884,7 +890,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -896,7 +902,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Maria\\Desktop\\SD\\Software_Design1\\Views\\Florist\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Florist\\Index.cshtml",

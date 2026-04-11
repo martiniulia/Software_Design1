@@ -193,6 +193,7 @@ C:\Users\Maria\Desktop\SD\Software_Design1\temp_cleanup_check\ru\Microsoft.CodeA
 C:\Users\Maria\Desktop\SD\Software_Design1\temp_cleanup_check\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Maria\Desktop\SD\Software_Design1\temp_cleanup_check\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Maria\Desktop\SD\Software_Design1\temp_cleanup_check\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Maria\Desktop\SD\Software_Design1\obj\Debug\net8.0\Software_Design1.sourcelink.json
 C:\Users\Maria\Desktop\SD\Software_Design1\obj\Debug\net8.0\staticwebassets\msbuild.Software_Design1.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Maria\Desktop\SD\Software_Design1\obj\Debug\net8.0\staticwebassets\msbuild.build.Software_Design1.props
 C:\Users\Maria\Desktop\SD\Software_Design1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Software_Design1.props

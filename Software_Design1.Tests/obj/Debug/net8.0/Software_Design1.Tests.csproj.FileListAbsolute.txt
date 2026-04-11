@@ -122,3 +122,4 @@ C:\Users\Maria\Desktop\SD\Software_Design1\Software_Design1.Tests\obj\Debug\net8
 C:\Users\Maria\Desktop\SD\Software_Design1\Software_Design1.Tests\obj\Debug\net8.0\Software_Design1.Tests.pdb
 C:\Users\Maria\Desktop\SD\Software_Design1\Software_Design1.Tests\obj\Debug\net8.0\Software_Design1.Tests.genruntimeconfig.cache
 C:\Users\Maria\Desktop\SD\Software_Design1\Software_Design1.Tests\obj\Debug\net8.0\ref\Software_Design1.Tests.dll
+C:\Users\Maria\Desktop\SD\Software_Design1\Software_Design1.Tests\obj\Debug\net8.0\Software_Design1.Tests.sourcelink.json

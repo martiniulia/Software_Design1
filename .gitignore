@@ -1,0 +1,46 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Logs
+*.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+
+# Environment files
+appsettings.*.json
+!appsettings.json
+.env*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# System files
+Thumbs.db
+.DS_Store
+
+# Node.js (if using frontend tools)
+node_modules/

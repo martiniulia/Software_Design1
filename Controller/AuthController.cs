@@ -1,4 +1,4 @@
-﻿using FlowerShop.Models;
+using FlowerShop.Models;
 using FlowerShop.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -47,11 +47,13 @@ public class AuthController : Controller
         var user = result.User;
         HttpContext.Session.SetInt32("UserId", user.Id);
         HttpContext.Session.SetString("Username", user.Username);
+        HttpContext.Session.SetString("UserEmail", user.Email);
         HttpContext.Session.SetString("UserRole", user.Role.ToString());
         var claims = new List<Claim>
         {
             new(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new(ClaimTypes.Name, user.Username),
+            new(ClaimTypes.Email, user.Email),
             new(ClaimTypes.Role, user.Role.ToString())
         };
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

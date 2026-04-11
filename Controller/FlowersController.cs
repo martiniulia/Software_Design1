@@ -1,5 +1,6 @@
-﻿using FlowerShop.Models;
+using FlowerShop.Models;
 using FlowerShop.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace FlowerShop.Controllers;
 public class FlowersController : Controller
@@ -11,6 +12,8 @@ public class FlowersController : Controller
     }
     private bool IsAdmin() => HttpContext.Session.GetString("UserRole") == "Admin";
     private bool CanManageFlowers() => IsAdmin();
+
+    [AllowAnonymous]
     public async Task<IActionResult> Index(string? search, string? sortBy, bool ascending = true)
     {
         ViewBag.Search = search;
@@ -20,6 +23,8 @@ public class FlowersController : Controller
         ViewBag.CanManage = CanManageFlowers();
         return View(await _flowerService.GetIndexDataAsync(search, sortBy, ascending));
     }
+
+    [AllowAnonymous]
     public async Task<IActionResult> Details(int id)
     {
         var flower = await _flowerService.GetDetailsAsync(id);
@@ -27,6 +32,8 @@ public class FlowersController : Controller
         ViewBag.CanManage = CanManageFlowers();
         return View(flower);
     }
+
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create()
     {
         if (!CanManageFlowers()) return Forbid();
@@ -34,6 +41,8 @@ public class FlowersController : Controller
         ViewBag.Florists = await _flowerService.GetFloristsAsync();
         return View(new Flower());
     }
+
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<IActionResult> Create(Flower flower)
     {
@@ -47,6 +56,8 @@ public class FlowersController : Controller
         ViewBag.Florists = await _flowerService.GetFloristsAsync();
         return View(flower);
     }
+
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id)
     {
         if (!CanManageFlowers()) return Forbid();
@@ -56,6 +67,8 @@ public class FlowersController : Controller
         ViewBag.Florists = await _flowerService.GetFloristsAsync();
         return View(flower);
     }
+
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<IActionResult> Edit(int id, Flower flower)
     {
@@ -71,6 +84,8 @@ public class FlowersController : Controller
         ViewBag.Florists = await _flowerService.GetFloristsAsync();
         return View(flower);
     }
+
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<IActionResult> Delete(int id)
     {
