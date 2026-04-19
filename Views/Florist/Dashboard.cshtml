@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Florist - Orders";
+    var pending = ViewBag.Pending as IEnumerable<FlowerShop.Models.Order> ?? Enumerable.Empty<FlowerShop.Models.Order>();
+    var inPrep = ViewBag.InPreparation as IEnumerable<FlowerShop.Models.Order> ?? Enumerable.Empty<FlowerShop.Models.Order>();
+    var assignmentWarning = ViewBag.AssignmentWarning as string;
+}
+
+<div style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
+    <a href="/" style="text-decoration: none; color: #666; font-size: 0.9rem; display: inline-flex; align-items: center; margin-bottom: 24px;">
+        ← Back to shop
+    </a>
+
+    @if (!string.IsNullOrWhiteSpace(assignmentWarning))
+    {
+        <div style="margin-bottom: 14px; background:#fdeaea; color:#a33; border:1px solid #f2c7c7; border-radius:8px; padding:10px 12px; font-family:'Segoe UI',sans-serif;">
+            @assignmentWarning
+        </div>
+    }
+
+    <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a;">Assigned Pending Orders</h2>
+    <p style="font-family: 'Segoe UI', sans-serif; color: #666; font-size: 0.9rem;">Open an order to review bouquet composition and update status from <strong>Pending</strong> to <strong>InPreparation</strong> and then <strong>Delivered</strong>.</p>
+
+    <div style="display: grid; gap: 10px; margin-top: 16px; font-family: 'Segoe UI', sans-serif;">
+        @if (!pending.Any())
+        {
+            <p style="color: #888;">No pending orders assigned to you.</p>
+        }
+        @foreach (var o in pending)
+        {
+            <a href="/Florist/OrderDetails/@o.Id" style="display: block; background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 14px; text-decoration: none; color: #1a2e1a;">
+                <strong>#@o.Id</strong> — @o.User?.Username — @o.OrderDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm") — <span style="color: #2d4a2d;">@o.Status</span> — @o.TotalAmount.ToString("F2") RON
+            </a>
+        }
+    </div>
+
+    <h3 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin-top: 40px;">Assigned In Preparation Orders</h3>
+    <div style="display: grid; gap: 10px; margin-top: 12px; font-family: 'Segoe UI', sans-serif;">
+        @if (!inPrep.Any())
+        {
+            <p style="color: #888;">No in-preparation orders assigned to you.</p>
+        }
+        @foreach (var o in inPrep)
+        {
+            <a href="/Florist/OrderDetails/@o.Id" style="display: block; background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 14px; text-decoration: none; color: #1a2e1a;">
+                <strong>#@o.Id</strong> — @o.User?.Username — @o.OrderDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm") — <span style="color: #c9967e;">@o.Status</span> — @o.TotalAmount.ToString("F2") RON
+            </a>
+        }
+    </div>
+</div>

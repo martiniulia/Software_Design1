@@ -1,0 +1,62 @@
+@model FlowerShop.Models.Order
+@{
+    ViewData["Title"] = "Order #" + Model.Id;
+}
+
+<div style="max-width: 900px; margin: 40px auto; padding: 0 20px; font-family: 'Segoe UI', sans-serif;">
+    <a href="/Florist/Dashboard" style="text-decoration: none; color: #666; font-size: 0.9rem; display: inline-flex; align-items: center; margin-bottom: 24px;">
+        ← Back to orders
+    </a>
+
+    <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a;">Order #@Model.Id</h2>
+    <p style="color: #666;">Customer: <strong>@Model.User?.Username</strong> | Status: <strong style="color: #1a2e1a;">@Model.Status</strong> | Total: <strong>@Model.TotalAmount.ToString("F2") RON</strong></p>
+
+    <h3 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin-top: 28px;">Recipe / Contents</h3>
+    <div style="background: #fff; border: 1px solid #ececec; border-radius: 8px; padding: 16px; margin-top: 12px;">
+        <ul style="margin: 0; padding-left: 18px;">
+            @foreach (var item in Model.OrderItems)
+            {
+                <li style="margin-bottom: 14px;">
+                    @if (item.Bouquet is not null)
+                    {
+                        <div><strong>@item.Bouquet.Name</strong> × @item.Quantity (bouquet)</div>
+                        <div style="margin-top: 6px; padding-left: 12px; border-left: 3px solid #c9967e;">
+                            <em>Bouquet recipe flowers (BouquetFlowers):</em>
+                            <ul>
+                                @foreach (var bf in item.Bouquet.BouquetFlowers)
+                                {
+                                    <li>@(bf.Flower?.Name ?? "?") — <strong>@bf.Quantity</strong> pcs.</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                    else if (item.Flower is not null)
+                    {
+                        <span><strong>@item.Flower.Name</strong> × @item.Quantity (single flower)</span>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px;">
+        @if (Model.Status == FlowerShop.Models.OrderStatus.Pending)
+        {
+            <form asp-controller="Florist" asp-action="SetInPreparation" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" style="background: #1a2e1a; color: #fff; border: none; padding: 12px 18px; border-radius: 4px; cursor: pointer;">
+                    Pending → InPreparation
+                </button>
+            </form>
+        }
+        @if (Model.Status == FlowerShop.Models.OrderStatus.InPreparation)
+        {
+            <form asp-controller="Florist" asp-action="SetDelivered" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" style="background: #1a2e1a; color: #fff; border: none; padding: 12px 18px; border-radius: 4px; cursor: pointer;">
+                    InPreparation → Delivered
+                </button>
+            </form>
+        }
+    </div>
+</div>

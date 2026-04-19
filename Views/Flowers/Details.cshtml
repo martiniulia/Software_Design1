@@ -1,0 +1,87 @@
+@model FlowerShop.Models.Flower
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = Model.Name + " - Details";
+}
+
+<div style="max-width: 1000px; margin: 50px auto; padding: 0 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    @* Navigation Back *@
+    <a href="/Flowers" style="text-decoration: none; color: #666; font-size: 0.9rem; display: inline-flex; align-items: center; margin-bottom: 30px; transition: color 0.2s;" onmouseover="this.style.color='#1a2e1a'" onmouseout="this.style.color='#666'">
+        ← Back to Collection
+    </a>
+
+    <div style="display: flex; gap: 50px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; flex-wrap: wrap;">
+
+        @* Left Side: Large Image *@
+        <div style="flex: 1; min-width: 350px;">
+            <div style="width: 100%; height: 500px; border-radius: 12px; overflow: hidden; background: #fcfcfc; border: 1px solid #eee;">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="/@Model.ImageUrl" 
+                             alt="@Model.Name" 
+                             style="width: 100%; height: 100%; object-fit: cover;" 
+                             onerror="this.src='/no-image.png'" />
+                }
+                else
+                {
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #ccc; font-style: italic;">
+                            No Image Available
+                        </div>
+                }
+            </div>
+        </div>
+
+        @* Right Side: Product Info *@
+        <div style="flex: 1; min-width: 350px; display: flex; flex-direction: column; justify-content: center;">
+            <span style="color: #c9967e; text-transform: uppercase; font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; display: block; margin-bottom: 10px;">
+                @(Model.Category?.Name ?? "General Collection")
+            </span>
+
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 3.2rem; color: #1a2e1a; margin: 0 0 15px 0; line-height: 1.1;">@Model.Name</h1>
+
+            <div style="font-size: 2rem; color: #2d4a2d; font-weight: bold; margin-bottom: 25px;">
+                @Model.Price.ToString("F2") RON
+            </div>
+
+            <div style="padding: 25px 0; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; margin-bottom: 35px;">
+                <p style="margin-bottom: 15px; font-size: 1.05rem; color: #444;">
+                    <strong style="color: #1a2e1a;">Availability:</strong> 
+                    <span style="color: @(Model.StockQuantity > 0 ? "#4a7a4a" : "#c0392b"); font-weight: 600; margin-left: 10px;">
+                        @(Model.StockQuantity > 0 ? $"{Model.StockQuantity} pieces in stock" : "Out of stock")
+                    </span>
+                </p>
+
+                @if (!string.IsNullOrEmpty(Model.Description))
+                {
+                        <p style="color: #666; line-height: 1.7; font-size: 1rem; margin: 0;">
+                        @Model.Description
+                        </p>
+                }
+                else
+                {
+                        <p style="color: #999; font-style: italic; margin: 0;">No description provided for this flower.</p>
+                }
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <form asp-controller="Cart" asp-action="AddToCart" method="post" style="flex: 2;">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <input type="hidden" name="productType" value="flower" />
+                    <input type="hidden" name="quantity" value="1" />
+                    <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                    <button type="submit" style="width: 100%; background: #1a2e1a; color: white; border: none; padding: 16px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem;">
+                        Add to Cart
+                    </button>
+                </form>
+
+                @if (Context.Session.GetString("UserRole") == "Admin")
+                {
+                        <a href="/Flowers/Edit/@Model.Id" style="flex: 1; text-align: center; border: 1px solid #c9967e; color: #c9967e; text-decoration: none; padding: 16px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; transition: all 0.2s;" onmouseover="this.style.background='#fdfbf9'" onmouseout="this.style.background='transparent'">
+                            Edit Details
+                        </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

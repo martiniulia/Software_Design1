@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Flower Shop</title>
+    <style>
+        :root { --green-dark: #1a2e1a; --cream: #f8f4ee; }
+        body { margin: 0; background: var(--cream); font-family: sans-serif; }
+
+        /* BARA VERDE */
+        .navbar { 
+            background: var(--green-dark) !important; 
+            height: 64px; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 2rem;
+            color: white;
+        }
+        .nav-brand { color: #f8f4ee; text-decoration: none; font-size: 1.5rem; font-weight: bold; margin-right: 20px; }
+        .nav-brand span { color: #e8c4b8; }
+        .nav-link { color: rgba(255,255,255,0.8); text-decoration: none; margin-right: 15px; font-size: 0.9rem; }
+        .page-wrapper { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">🌸 Flower <span>Shop</span></a>
+
+        <div style="display: flex; flex: 1;">
+            <a href="/Flowers" class="nav-link">Flowers</a>
+            <a href="/Bouquets" class="nav-link">Bouquets</a>
+            <a href="/Cart" class="nav-link">Cart</a>
+
+            @* Verificam rolul cu atentie sa nu crape *@
+            @{
+                var userRole = Context.Session.GetString("UserRole");
+            }
+
+            @if (userRole == "Admin")
+            {
+                    <a href="/Admin" class="nav-link">Management</a>
+            }
+            @if (userRole == "Florist")
+            {
+                    <a href="/Florist/Dashboard" class="nav-link">Florist orders</a>
+            }
+            else if (userRole == "Client")
+            {
+                    <a href="/Orders/History" class="nav-link">My Orders</a>
+            }
+        </div>
+
+        <div style="margin-left: auto;">
+            @if (Context.Session.GetInt32("UserId") == null)
+            {
+                    <a href="/Account/Login" class="nav-link">Login</a>
+            }
+            else
+            {
+                    <span style="margin-right: 10px;">Hi, @Context.Session.GetString("Username")</span>
+                    <a href="/Account/Logout" class="nav-link">Logout</a>
+            }
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@model IEnumerable<FlowerShop.Models.Bouquet>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Bouquet Collection";
+}
+
+<div style="max-width: 1100px; margin: 40px auto; padding: 0 20px; font-family: 'Segoe UI', sans-serif;">
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+        <div>
+            <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin: 0; font-size: 2.8rem;">Ready-Made Bouquets</h2>
+            <p style="color: #666; margin: 5px 0 0 0;">Expertly crafted arrangements for your loved ones.</p>
+        </div>
+        @if (Context.Session.GetString("UserRole") == "Admin")
+        {
+                <a href="/Bouquets/Create" style="background: #1a2e1a; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">+ New Bouquet</a>
+        }
+    </div>
+
+    @* Grid Layout *@
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+        @foreach (var bouquet in Model)
+        {
+                <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+
+                @* Image Container *@
+                    <div style="height: 350px; width: 100%; overflow: hidden; background: #fcfcfc; position: relative;">
+                    @if (!string.IsNullOrEmpty(bouquet.ImageUrl))
+                    {
+                                <img src="@bouquet.ImageUrl" style="width: 100%; height: 100%; object-fit: cover;" />
+                    }
+                    else
+                    {
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #ccc;">No Image</div>
+                    }
+                        <div style="position: absolute; bottom: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a2e1a;">
+                        @bouquet.Price.ToString("F2") RON
+                        </div>
+                    </div>
+
+                @* Details *@
+                    <div style="padding: 25px;">
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.5rem; color: #1a2e1a; font-family: 'Playfair Display', serif;">@bouquet.Name</h3>
+
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 20px;">
+                        @* Optional short summary for included flowers *@
+                            Contains a mix of fresh seasonal flowers.
+                        </p>
+
+                        <div style="display: flex; gap: 10px; align-items: stretch;">
+                            <a href="/Bouquets/Details/@bouquet.Id" style="flex: 2; text-align: center; background: #1a2e1a; color: white; text-decoration: none; padding: 12px; border-radius: 4px; font-weight: 600;">View Arrangement</a>
+                            <form asp-controller="Cart" asp-action="AddToCart" method="post" style="flex: 2; margin: 0;">
+                                <input type="hidden" name="id" value="@bouquet.Id" />
+                                <input type="hidden" name="productType" value="bouquet" />
+                                <input type="hidden" name="quantity" value="1" />
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path@Context.Request.QueryString" />
+                                <button type="submit" style="width: 100%; height: 44px; background: #1a2e1a; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">Add to Cart</button>
+                            </form>
+                        @if (Context.Session.GetString("UserRole") == "Admin")
+                        {
+                                    <a href="/Bouquets/Edit/@bouquet.Id" style="flex: 1; height: 44px; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid #c9967e; color: #c9967e; text-decoration: none; border-radius: 4px;">Edit</a>
+                        }
+                        @if (Context.Session.GetString("UserRole") == "Admin")
+                        {
+                                    <form asp-controller="Bouquets" asp-action="Delete" asp-route-id="@bouquet.Id" method="post" style="flex: 1; margin: 0;">
+                                        <button type="submit" style="width:100%; height:44px; text-align:center; border:1px solid #b35353; color:#b35353; background:white; text-decoration:none; border-radius:4px; cursor:pointer;">Delete</button>
+                                    </form>
+                        }
+                        </div>
+                    </div>
+                </div>
+        }
+    </div>
+</div>

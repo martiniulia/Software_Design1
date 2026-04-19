@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Create Account";
+}
+
+<div style="max-width: 360px; margin: 60px auto; padding: 0 20px;">
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--green-dark);">Register</h2>
+        <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 8px;">Join our floral community</p>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+            <div class="alert alert-danger" style="margin-bottom: 20px; text-align: center;">
+            @ViewBag.Error
+            </div>
+    }
+
+    <form method="post" style="display: flex; flex-direction: column; gap: 20px;">
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label">Username</label>
+            <input name="username" class="form-control" placeholder="Choose a display name" required />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label">Email Address</label>
+            <input name="email" type="email" class="form-control" placeholder="name@example.com" required />
+        </div>
+
+        <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="justify-content: center; padding: 12px; margin-top: 10px;">
+            Create Account
+        </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Already have an account? <a href="/Account/Login" style="color: var(--green-light); text-decoration: none; font-weight: 500;">Login here</a>
+        </p>
+    </div>
+
+</div>

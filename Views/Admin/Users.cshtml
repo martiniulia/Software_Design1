@@ -1,0 +1,37 @@
+@model IEnumerable<FlowerShop.Models.User>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<div style="max-width:1000px;margin:40px auto;padding:0 20px;">
+    <a href="/Admin" style="text-decoration:none;color:#666;font-size:0.9rem;display:inline-flex;margin-bottom:20px;">← Back to Management</a>
+    <h2 style="font-family:'Playfair Display',serif;color:#1a2e1a;">Users</h2>
+
+    <div style="display:grid;gap:10px;margin-top:16px;">
+        @foreach (var user in Model)
+        {
+            <div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #ececec;border-radius:8px;padding:12px;font-family:'Segoe UI',sans-serif;">
+                <div>
+                    <strong>@user.Username</strong> - @user.Email
+                </div>
+                <form asp-action="UpdateUserRole" method="post" style="display:flex;align-items:center;gap:8px;">
+                    <input type="hidden" name="userId" value="@user.Id" />
+                    <select name="role" style="height:40px;padding:0 8px;border:1px solid #ccc;border-radius:4px;">
+                        @foreach (var role in Enum.GetValues<FlowerShop.Models.UserRole>())
+                        {
+                            if (role == user.Role)
+                            {
+                                <option value="@role" selected>@role</option>
+                            }
+                            else
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        }
+                    </select>
+                    <button type="submit" style="height:40px;min-width:90px;background:#1a2e1a;color:white;border:none;border-radius:4px;cursor:pointer;">Save</button>
+                </form>
+            </div>
+        }
+    </div>
+</div>

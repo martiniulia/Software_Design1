@@ -1,0 +1,62 @@
+@model FlowerShop.Models.Flower
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit " + Model.Name;
+    var categories = ViewBag.Categories as IEnumerable<FlowerShop.Models.Category> ?? Enumerable.Empty<FlowerShop.Models.Category>();
+    var florists = ViewBag.Florists as IEnumerable<FlowerShop.Models.Florist> ?? Enumerable.Empty<FlowerShop.Models.Florist>();
+}
+
+<div style="max-width: 640px; margin: 40px auto; padding: 0 20px;">
+    <a href="/Flowers" style="text-decoration: none; color: #666; font-size: 0.9rem; display: inline-flex; margin-bottom: 24px;">← Back to Collection</a>
+    <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a;">Edit Flower</h2>
+
+    <form asp-action="Edit" asp-route-id="@Model.Id" method="post" style="display: grid; gap: 16px; font-family: 'Segoe UI', sans-serif;">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="All" style="color: #b35353;"></div>
+        <div>
+            <label>Name</label><br />
+            <input asp-for="Name" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" />
+        </div>
+        <div>
+            <label>Description</label><br />
+            <textarea asp-for="Description" rows="3" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+        </div>
+        <div>
+            <label>Price (RON)</label><br />
+            <input asp-for="Price" type="number" step="0.01" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" />
+        </div>
+        <div>
+            <label>Stock</label><br />
+            <input asp-for="StockQuantity" type="number" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" />
+        </div>
+        <div>
+            <label>Color</label><br />
+            <input asp-for="Color" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" />
+        </div>
+        <div>
+            <label>Category</label><br />
+            <select asp-for="CategoryId" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="">—</option>
+                @foreach (var c in categories)
+                {
+                    <option value="@c.Id">@c.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Florist (optional)</label><br />
+            <select asp-for="FloristId" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="">—</option>
+                @foreach (var f in florists)
+                {
+                    <option value="@f.Id">@f.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Image URL</label><br />
+            <input asp-for="ImageUrl" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" />
+        </div>
+        <button type="submit" style="background: #1a2e1a; color: #fff; border: none; padding: 12px; border-radius: 4px; cursor: pointer;">Update</button>
+    </form>
+</div>

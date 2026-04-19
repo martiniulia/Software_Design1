@@ -1,0 +1,48 @@
+@model IEnumerable<FlowerShop.Models.Order>
+@{
+    ViewData["Title"] = "Manage Orders";
+    var floristUsers = ViewBag.FloristUsers as IEnumerable<FlowerShop.Models.User> ?? Enumerable.Empty<FlowerShop.Models.User>();
+}
+
+<div style="max-width:1000px;margin:40px auto;padding:0 20px;">
+    <a href="/Admin" style="text-decoration:none;color:#666;font-size:0.9rem;display:inline-flex;margin-bottom:20px;">← Back to Management</a>
+
+    @if (TempData["Error"] != null)
+    {
+        <div style="background:#fdeaea;color:#a33;padding:10px 12px;border-radius:6px;margin-bottom:14px;font-family:'Segoe UI',sans-serif;">@TempData["Error"]</div>
+    }
+
+    <h2 style="font-family:'Playfair Display',serif;color:#1a2e1a;">Orders</h2>
+
+    <div style="display:grid;gap:10px;margin-top:16px;">
+        @foreach (var order in Model)
+        {
+            <div style="display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #ececec;border-radius:8px;padding:12px;font-family:'Segoe UI',sans-serif;">
+                <div>
+                    <strong>#@order.Id</strong> - @order.User?.Username - @order.TotalAmount.ToString("F2") RON
+                    <div style="margin-top:4px;color:#666;">
+                        Status: @order.Status | Items: @order.OrderItems.Count | Assigned: @(order.AssignedFlorist?.Name ?? "Unassigned")
+                    </div>
+                </div>
+                <form asp-action="AssignOrderFlorist" method="post" style="display:flex;gap:8px;align-items:center;margin:0;">
+                    <input type="hidden" name="orderId" value="@order.Id" />
+                    <select name="floristUserId" style="height:40px;padding:0 10px;border:1px solid #ccc;border-radius:4px;min-width:180px;">
+                        <option value="">Unassigned</option>
+                        @foreach (var floristUser in floristUsers)
+                        {
+                            if (order.AssignedFlorist?.UserId == floristUser.Id)
+                            {
+                                <option value="@floristUser.Id" selected>@floristUser.Username</option>
+                            }
+                            else
+                            {
+                                <option value="@floristUser.Id">@floristUser.Username</option>
+                            }
+                        }
+                    </select>
+                    <button type="submit" style="height:40px;background:#1a2e1a;color:#fff;border:none;padding:0 14px;border-radius:4px;cursor:pointer;">Assign</button>
+                </form>
+            </div>
+        }
+    </div>
+</div>

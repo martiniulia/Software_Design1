@@ -1,0 +1,45 @@
+@model FlowerShop.Models.Category
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<h2>Category Details</h2>
+
+<div>
+    <strong>Name:</strong> @Model.Name<br />
+    <strong>Description:</strong> @Model.Description<br />
+    <strong>Flowers Count:</strong> @Model.Flowers.Count
+</div>
+
+<h3>Flowers in this Category</h3>
+@if (Model.Flowers.Any())
+{
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Supplier</th>
+        </tr>
+        @foreach (var flower in Model.Flowers)
+        {
+            <tr>
+                <td><a href="/Flowers/Details/@flower.Id">@flower.Name</a></td>
+                <td>@flower.Price RON</td>
+                <td>@flower.StockQuantity</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No flowers in this category.</p>
+}
+
+<p>
+    <a href="/Categories">Back to List</a>
+    @if (ViewBag.IsAdmin)
+    {
+        <text> | </text><a href="/Categories/Edit/@Model.Id">Edit</a>
+    }
+</p>
