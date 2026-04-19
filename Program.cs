@@ -1,4 +1,4 @@
-﻿using FlowerShop.Data;
+using FlowerShop.Data;
 using FlowerShop.Middleware;
 using FlowerShop.Repositories;
 using FlowerShop.Repositories.Interfaces;
@@ -13,7 +13,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
-    ));
+    ), contextLifetime: ServiceLifetime.Scoped, optionsLifetime: ServiceLifetime.Singleton);
+
+builder.Services.AddDbContextFactory<AppDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    ), ServiceLifetime.Singleton);
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IFlowerRepository, FlowerRepository>();
 builder.Services.AddScoped<IBouquetRepository, BouquetRepository>();
@@ -32,6 +38,22 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IFloristsService, FloristsService>();
 builder.Services.AddScoped<IFloristOrdersService, FloristOrdersService>();
 builder.Services.AddScoped<ICartService, CartService>();
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddSingleton<FlowerShop.Events.IEventBus, FlowerShop.Events.InMemoryEventBus>();
+
+builder.Services.AddTransient<IEmailSender, SmtpEmailSender>();
+
+builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerCreatedEvent>, NotificationService>();
+builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerUpdatedEvent>, NotificationService>();
+builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerDeletedEvent>, NotificationService>();
+
+builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.JsonExportStrategy>();
+builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.XmlExportStrategy>();
+builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.CsvExportStrategy>();
+
+builder.Services.AddSingleton<FlowerShop.Export.ExportStrategyFactory>();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -46,6 +68,18 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     });
 builder.Services.AddAuthorization();
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var eventBus = app.Services.GetRequiredService<FlowerShop.Events.IEventBus>();
+    var createdHandler = scope.ServiceProvider.GetRequiredService<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerCreatedEvent>>();
+    var updatedHandler = scope.ServiceProvider.GetRequiredService<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerUpdatedEvent>>();
+    var deletedHandler = scope.ServiceProvider.GetRequiredService<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerDeletedEvent>>();
+
+    eventBus.Subscribe(createdHandler);
+    eventBus.Subscribe(updatedHandler);
+    eventBus.Subscribe(deletedHandler);
+}
 app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();

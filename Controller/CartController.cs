@@ -1,10 +1,11 @@
-﻿using FlowerShop.Extensions;
+using FlowerShop.Extensions;
 using FlowerShop.Models;
 using FlowerShop.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace FlowerShop.Controllers;
-[AllowAnonymous]
+
+[Authorize(Roles = "Client,Admin")]
 [IgnoreAntiforgeryToken]
 public class CartController : Controller
 {

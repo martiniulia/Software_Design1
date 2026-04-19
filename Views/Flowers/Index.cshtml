@@ -6,7 +6,6 @@
 
 <div style="max-width: 1100px; margin: 40px auto; padding: 0 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
-    @* Header Section *@
     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
         <div>
             <h2 style="font-family: 'Playfair Display', serif; color: #1a2e1a; margin: 0; font-size: 2.8rem;">Our Flowers</h2>
@@ -18,7 +17,6 @@
         }
     </div>
 
-    @* Search & Sort Bar *@
     <div style="display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
         <form method="get" style="display: flex; gap: 10px; flex: 1; min-width: 300px;">
             <input name="search" value="@ViewBag.Search" placeholder="Search flowers..." 
@@ -32,7 +30,12 @@
         </div>
     </div>
 
-    @* Grid Layout - 2 Columns *@
+    <div style="margin-bottom: 20px; text-align: right;">
+        <a href="/Export/Flowers?format=json&sortBy=@ViewBag.SortBy&sortDir=@ViewBag.Ascending&filterValue=@ViewBag.Search" style="display: inline-block; padding: 8px 15px; margin-left: 10px; background: #333; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.85rem;">Export JSON</a>
+        <a href="/Export/Flowers?format=xml&sortBy=@ViewBag.SortBy&sortDir=@ViewBag.Ascending&filterValue=@ViewBag.Search" style="display: inline-block; padding: 8px 15px; margin-left: 10px; background: #333; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.85rem;">Export XML</a>
+        <a href="/Export/Flowers?format=csv&sortBy=@ViewBag.SortBy&sortDir=@ViewBag.Ascending&filterValue=@ViewBag.Search" style="display: inline-block; padding: 8px 15px; margin-left: 10px; background: #333; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.85rem;">Export CSV</a>
+    </div>
+
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
         @foreach (var flower in Model)
         {
@@ -40,7 +43,6 @@
                      onmouseover="this.style.transform='translateY(-5px)'" 
                      onmouseout="this.style.transform='translateY(0)'">
 
-                @* Large Image Container *@
                     <div style="height: 350px; width: 100%; overflow: hidden; background: #fcfcfc; position: relative;">
                     @if (!string.IsNullOrEmpty(flower.ImageUrl))
                     {
@@ -54,13 +56,11 @@
                                 <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #ccc;">No Image Available</div>
                     }
 
-                    @* Price Badge Over Image *@
                         <div style="position: absolute; bottom: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 15px; border-radius: 20px; font-weight: bold; color: #1a2e1a; backdrop-filter: blur(5px);">
                         @flower.Price.ToString("F2") RON
                         </div>
                     </div>
 
-                @* Content Details *@
                     <div style="padding: 25px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                             <div>
