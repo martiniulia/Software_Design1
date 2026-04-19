@@ -10,5 +10,5 @@ TestResults/
 *.log
 *.tmp
 
-!appsettings.json
+appsettings.json
 appsettings.Development.json
