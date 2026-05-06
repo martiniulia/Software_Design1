@@ -2,20 +2,23 @@ using System.Text;
 
 namespace FlowerShop.Export;
 
-public class CsvExportStrategy : IExportStrategy
+public class CsvExporter<T> : DataExporter<T>
 {
-    public string Format => "csv";
-    public string ContentType => "text/csv";
-    public string FileExtension => "csv";
+    public CsvExporter()
+    {
+        Format = "csv";
+        ContentType = "text/csv";
+        FileExtension = "csv";
+    }
 
-    public byte[] Export<T>(IEnumerable<T> items)
+    protected override string TransformData(IEnumerable<T> data)
     {
         var properties = typeof(T).GetProperties();
         var sb = new StringBuilder();
 
         sb.AppendLine(string.Join(",", properties.Select(p => EscapeCsv(p.Name))));
 
-        foreach (var item in items)
+        foreach (var item in data)
         {
             var values = properties.Select(p => 
             {
@@ -25,7 +28,7 @@ public class CsvExportStrategy : IExportStrategy
             sb.AppendLine(string.Join(",", values));
         }
 
-        return Encoding.UTF8.GetBytes(sb.ToString());
+        return sb.ToString();
     }
 
     private string EscapeCsv(string value)

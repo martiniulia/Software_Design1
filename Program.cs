@@ -9,6 +9,19 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddHttpClient("CatalogService", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5001/");
+});
+builder.Services.AddHttpClient("OrderService", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5002/");
+});
+builder.Services.AddHttpClient("UserService", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5003/");
+});
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -49,9 +62,9 @@ builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.
 builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerUpdatedEvent>, NotificationService>();
 builder.Services.AddTransient<FlowerShop.Events.IEventHandler<FlowerShop.Events.FlowerDeletedEvent>, NotificationService>();
 
-builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.JsonExportStrategy>();
-builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.XmlExportStrategy>();
-builder.Services.AddSingleton<FlowerShop.Export.IExportStrategy, FlowerShop.Export.CsvExportStrategy>();
+builder.Services.AddSingleton<FlowerShop.Export.DataExporter<FlowerShop.Models.FlowerExportDto>, FlowerShop.Export.JsonExporter<FlowerShop.Models.FlowerExportDto>>();
+builder.Services.AddSingleton<FlowerShop.Export.DataExporter<FlowerShop.Models.FlowerExportDto>, FlowerShop.Export.XmlExporter<FlowerShop.Models.FlowerExportDto>>();
+builder.Services.AddSingleton<FlowerShop.Export.DataExporter<FlowerShop.Models.FlowerExportDto>, FlowerShop.Export.CsvExporter<FlowerShop.Models.FlowerExportDto>>();
 
 builder.Services.AddSingleton<FlowerShop.Export.ExportStrategyFactory>();
 builder.Services.AddSession(options =>

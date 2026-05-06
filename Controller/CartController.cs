@@ -4,8 +4,7 @@ using FlowerShop.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace FlowerShop.Controllers;
-
-[Authorize(Roles = "Client,Admin")]
+[AllowAnonymous]
 [IgnoreAntiforgeryToken]
 public class CartController : Controller
 {

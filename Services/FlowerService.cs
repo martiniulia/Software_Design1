@@ -8,20 +8,44 @@ public class FlowerService : IFlowerService
     private readonly IFlowerRepository _flowerRepository;
     private readonly IEventBus _eventBus;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IHttpClientFactory _httpClientFactory;
 
-    public FlowerService(IFlowerRepository flowerRepository, IEventBus eventBus, IHttpContextAccessor httpContextAccessor)
+    public FlowerService(IFlowerRepository flowerRepository, IEventBus eventBus, IHttpContextAccessor httpContextAccessor, IHttpClientFactory httpClientFactory)
     {
         _flowerRepository = flowerRepository;
         _eventBus = eventBus;
         _httpContextAccessor = httpContextAccessor;
+        _httpClientFactory = httpClientFactory;
     }
-    public Task<List<Flower>> GetIndexDataAsync(string? search, string? sortBy, bool ascending)
+    public async Task<List<Flower>> GetIndexDataAsync(string? search, string? sortBy, bool ascending)
     {
-        return _flowerRepository.GetAllWithFiltersAsync(search, sortBy, ascending);
+        var client = _httpClientFactory.CreateClient("CatalogService");
+        var response = await client.GetAsync("api/flowers");
+        if (response.IsSuccessStatusCode)
+        {
+            var flowers = await response.Content.ReadFromJsonAsync<List<Flower>>() ?? new List<Flower>();
+            
+            if (!string.IsNullOrWhiteSpace(search))
+                flowers = flowers.Where(f => f.Name.Contains(search, StringComparison.OrdinalIgnoreCase) || f.Category?.Name.Contains(search, StringComparison.OrdinalIgnoreCase) == true).ToList();
+
+            if (sortBy == "price")
+                flowers = ascending ? flowers.OrderBy(f => f.Price).ToList() : flowers.OrderByDescending(f => f.Price).ToList();
+            else if (sortBy == "name")
+                flowers = ascending ? flowers.OrderBy(f => f.Name).ToList() : flowers.OrderByDescending(f => f.Name).ToList();
+
+            return flowers;
+        }
+        return await _flowerRepository.GetAllWithFiltersAsync(search, sortBy, ascending);
     }
-    public Task<Flower?> GetDetailsAsync(int id)
+    public async Task<Flower?> GetDetailsAsync(int id)
     {
-        return _flowerRepository.GetByIdWithRelationsAsync(id);
+        var client = _httpClientFactory.CreateClient("CatalogService");
+        var response = await client.GetAsync($"api/flowers/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<Flower>();
+        }
+        return await _flowerRepository.GetByIdWithRelationsAsync(id);
     }
     public Task<List<Category>> GetCategoriesAsync()
     {
@@ -33,8 +57,24 @@ public class FlowerService : IFlowerService
     }
     public async Task CreateAsync(Flower flower)
     {
-        await _flowerRepository.AddAsync(flower);
-        await _flowerRepository.SaveChangesAsync();
+        var client = _httpClientFactory.CreateClient("CatalogService");
+        var command = new {
+            flower.Name,
+            flower.Description,
+            flower.Price,
+            flower.StockQuantity,
+            flower.Color,
+            flower.ImageUrl,
+            flower.CategoryId,
+            flower.FloristId
+        };
+        var response = await client.PostAsJsonAsync("api/flowers", command);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            await _flowerRepository.AddAsync(flower);
+            await _flowerRepository.SaveChangesAsync();
+        }
 
         var email = _httpContextAccessor.HttpContext?.User?.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value 
                     ?? _httpContextAccessor.HttpContext?.Session?.GetString("UserEmail") 

@@ -1,15 +1,17 @@
+using FlowerShop.Models;
+
 namespace FlowerShop.Export;
 
 public class ExportStrategyFactory
 {
-    private readonly IEnumerable<IExportStrategy> _strategies;
+    private readonly IEnumerable<DataExporter<FlowerExportDto>> _strategies;
 
-    public ExportStrategyFactory(IEnumerable<IExportStrategy> strategies)
+    public ExportStrategyFactory(IEnumerable<DataExporter<FlowerExportDto>> strategies)
     {
         _strategies = strategies;
     }
 
-    public IExportStrategy GetStrategy(string format)
+    public DataExporter<FlowerExportDto> GetStrategy(string format)
     {
         var strategy = _strategies.FirstOrDefault(s => s.Format.Equals(format, StringComparison.OrdinalIgnoreCase));
         if (strategy == null)

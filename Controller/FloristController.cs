@@ -2,8 +2,7 @@ using FlowerShop.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace FlowerShop.Controllers;
-
-[Authorize(Roles = "Florist,Admin")]
+[Authorize(Roles = "Florist")]
 public class FloristController : Controller
 {
     private readonly IFloristOrdersService _floristOrdersService;
