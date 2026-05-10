@@ -1,4 +1,4 @@
-﻿using FlowerShop.Models;
+using FlowerShop.Models;
 using FlowerShop.Repositories.Interfaces;
 using FlowerShop.Services.Interfaces;
 namespace FlowerShop.Services;
@@ -7,14 +7,18 @@ public class OrdersService : IOrdersService
     private readonly IOrderRepository _orderRepository;
     private readonly IFlowerRepository _flowerRepository;
     private readonly IBouquetRepository _bouquetRepository;
+    private readonly IHttpClientFactory _httpClientFactory;
+
     public OrdersService(
         IOrderRepository orderRepository,
         IFlowerRepository flowerRepository,
-        IBouquetRepository bouquetRepository)
+        IBouquetRepository bouquetRepository,
+        IHttpClientFactory httpClientFactory)
     {
         _orderRepository = orderRepository;
         _flowerRepository = flowerRepository;
         _bouquetRepository = bouquetRepository;
+        _httpClientFactory = httpClientFactory;
     }
     public async Task<List<Order>> GetIndexAsync(bool canManageOrders, int? currentUserId, string? status, string? fromDate, string? toDate)
     {
@@ -27,13 +31,25 @@ public class OrdersService : IOrdersService
         DateTime? parsedTo = DateTime.TryParse(toDate, out var to) ? to.AddDays(1) : null;
         return await _orderRepository.GetOrdersForIndexAsync(canManageOrders, currentUserId, parsedStatus, parsedFrom, parsedTo);
     }
-    public Task<List<Order>> GetHistoryAsync(int userId)
+    public async Task<List<Order>> GetHistoryAsync(int userId)
     {
-        return _orderRepository.GetHistoryAsync(userId);
+        var client = _httpClientFactory.CreateClient("OrderService");
+        var response = await client.GetAsync($"api/orders/user/{userId}");
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<List<Order>>() ?? new List<Order>();
+        }
+        return await _orderRepository.GetHistoryAsync(userId);
     }
-    public Task<Order?> GetDetailsAsync(int id)
+    public async Task<Order?> GetDetailsAsync(int id)
     {
-        return _orderRepository.GetDetailsAsync(id);
+        var client = _httpClientFactory.CreateClient("OrderService");
+        var response = await client.GetAsync($"api/orders/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<Order>();
+        }
+        return await _orderRepository.GetDetailsAsync(id);
     }
     public async Task<OrderCreateViewData> GetCreateViewDataAsync()
     {

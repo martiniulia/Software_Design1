@@ -1,4 +1,4 @@
-﻿using FlowerShop.Models;
+using FlowerShop.Models;
 using FlowerShop.Repositories.Interfaces;
 using FlowerShop.Services.Interfaces;
 using System.Security.Cryptography;
@@ -7,9 +7,12 @@ namespace FlowerShop.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
-    public UserService(IUserRepository userRepository)
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public UserService(IUserRepository userRepository, IHttpClientFactory httpClientFactory)
     {
         _userRepository = userRepository;
+        _httpClientFactory = httpClientFactory;
     }
     public async Task<List<User>> GetIndexAsync(string? search, string? role)
     {
@@ -20,9 +23,15 @@ public class UserService : IUserService
         }
         return await _userRepository.GetAllAsync(search, parsedRole);
     }
-    public Task<User?> GetDetailsAsync(int id)
+    public async Task<User?> GetDetailsAsync(int id)
     {
-        return _userRepository.GetByIdWithOrdersAsync(id);
+        var client = _httpClientFactory.CreateClient("UserService");
+        var response = await client.GetAsync($"api/users/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<User>();
+        }
+        return await _userRepository.GetByIdWithOrdersAsync(id);
     }
     public async Task<UserOperationResult> UpdateAsync(int id, User user, string? newPassword, bool canChangeRole)
     {

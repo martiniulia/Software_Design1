@@ -18,6 +18,26 @@
     <Content Remove="Software_Design1.Tests\**" />
     <EmbeddedResource Remove="Software_Design1.Tests\**" />
     <None Remove="Software_Design1.Tests\**" />
+    
+    <Compile Remove="FlowerShop.Core\**" />
+    <Content Remove="FlowerShop.Core\**" />
+    <EmbeddedResource Remove="FlowerShop.Core\**" />
+    <None Remove="FlowerShop.Core\**" />
+
+    <Compile Remove="FlowerShop.CatalogService\**" />
+    <Content Remove="FlowerShop.CatalogService\**" />
+    <EmbeddedResource Remove="FlowerShop.CatalogService\**" />
+    <None Remove="FlowerShop.CatalogService\**" />
+
+    <Compile Remove="FlowerShop.OrderService\**" />
+    <Content Remove="FlowerShop.OrderService\**" />
+    <EmbeddedResource Remove="FlowerShop.OrderService\**" />
+    <None Remove="FlowerShop.OrderService\**" />
+
+    <Compile Remove="FlowerShop.UserService\**" />
+    <Content Remove="FlowerShop.UserService\**" />
+    <EmbeddedResource Remove="FlowerShop.UserService\**" />
+    <None Remove="FlowerShop.UserService\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +63,10 @@
 
   <ItemGroup>
     <Folder Include="Views\Auth\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="FlowerShop.Core\FlowerShop.Core.csproj" />
   </ItemGroup>
 
 </Project>

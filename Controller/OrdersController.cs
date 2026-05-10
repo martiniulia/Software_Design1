@@ -1,5 +1,6 @@
-﻿using FlowerShop.Models;
+using FlowerShop.Models;
 using FlowerShop.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace FlowerShop.Controllers;
 public class OrdersController : Controller
@@ -15,6 +16,8 @@ public class OrdersController : Controller
     private bool IsLoggedIn() => HttpContext.Session.GetInt32("UserId") != null;
     private int? CurrentUserId => HttpContext.Session.GetInt32("UserId");
     private bool CanManageOrders() => IsAdmin() || IsFlorist();
+
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Index(string? status, string? fromDate, string? toDate)
     {
         if (!IsLoggedIn()) return RedirectToAction("Login", "Auth");
@@ -28,6 +31,8 @@ public class OrdersController : Controller
         var orders = await _ordersService.GetIndexAsync(CanManageOrders(), CurrentUserId, status, fromDate, toDate);
         return View(orders);
     }
+
+    [Authorize(Roles = "Client")]
     public async Task<IActionResult> History()
     {
         if (!IsLoggedIn()) return RedirectToAction("Login", "Auth", new { returnUrl = Url.Action("History", "Orders") });

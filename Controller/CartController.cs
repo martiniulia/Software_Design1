@@ -1,4 +1,4 @@
-﻿using FlowerShop.Extensions;
+using FlowerShop.Extensions;
 using FlowerShop.Models;
 using FlowerShop.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
